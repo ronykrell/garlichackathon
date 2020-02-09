@@ -9,7 +9,16 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<button id="predict" class="btn btn-primary mt-2 ml-3">Predict</button>
+				<div class="col-4">
+					<button id="predict" class="btn btn-primary mt-2 ml-3">Predict</button>
+				</div>
+				<div class="col-4">
+					<h3> Correct: </h3><h4><span id="correct-count">0</span></h4>
+				</div>
+				<div class="col-4">
+					<h3> Incorrect: </h3><h4><span id="incorrect-count">0</span></h4>
+				</div>
+
 			</div>
 			<div class="row">
 				<div class="col-6 align-content-center">
@@ -18,22 +27,22 @@
 			</div>
 			<div class="row align-middle pb-3 pt-3 p-0">
 			  <div class="col-2 my-auto" id="cyrindarical_act">
-				<img src="cyrindarical grasp.png" class="img-fluid" >
+				<img src="cyrindarical grasp.png" class="img-fluid" style="border: 10px solid transparent">
 			  </div>
 			  <div class="col-2 my-auto" id="palmar_act">
-				<img src="palmar.png" class="img-fluid">
+				<img src="palmar.png" class="img-fluid" style="border: 10px solid transparent">
 			  </div>
 				<div class="col-2 my-auto" id="hook_act">
-				  <img src="hook or snap.png" class="img-fluid" >
+				  <img src="hook or snap.png" class="img-fluid" style="border: 10px solid transparent" >
 				</div>
 				<div class="col-2 my-auto" id="spherical_act" >
-				  <img src="spherical.png" class="img-fluid">
+				  <img src="spherical.png" class="img-fluid" style="border: 10px solid transparent">
 				</div>
 				<div class="col-2 my-auto" id="tip_act">
-					<img src="tip.png" class="img-fluid" >
+					<img src="tip.png" class="img-fluid" style="border: 10px solid transparent">
 				  </div>
 				  <div class="col-2 my-auto" id="lateral_act">
-					<img src="lateral.PNG" class="img-fluid">
+					<img src="lateral.PNG" class="img-fluid" style="border: 10px solid transparent">
 				</div>
 			</div>
 			<div class="row">
@@ -43,22 +52,22 @@
 			</div>
 			<div class="row">
 				<div class="col-2 my-auto" id="cyrindarical_pred">
-					<img src="cyrindarical grasp.png" class="img-fluid">
+					<img src="cyrindarical grasp.png" class="img-fluid" style="border: 10px solid transparent">
 				  </div>
 				<div class="col-2 my-auto" id="palmar_pred">
-					<img src="palmar.png" class="img-fluid">
+					<img src="palmar.png" class="img-fluid" style="border: 10px solid transparent">
 				  </div>
 				<div class="col-2 my-auto" id="hook_pred">
-					<img src="hook or snap.png" class="img-fluid">
+					<img src="hook or snap.png" class="img-fluid" style="border: 10px solid transparent">
 				  </div>
-				  <div class="col-2 my-auto" id="spherical_pred">
-					<img src="spherical.png" class="img-fluid">
+				  <div class="col-2 my-auto" id="spherical_pred" >
+					<img src="spherical.png" class="img-fluid" style="border: 10px solid transparent">
 				  </div>
 				<div class="col-2 my-auto" id="tip_pred">
-				  <img src="tip.png" class="img-fluid">
+				  <img src="tip.png" class="img-fluid" style="border: 10px solid transparent">
 				</div>
 				<div class="col-2 my-auto" id="lateral_pred">
-				  <img src="lateral.PNG" class="img-fluid">
+				  <img src="lateral.PNG" class="img-fluid" style="border: 10px solid transparent">
 				</div>
 				</div>
 			</div>

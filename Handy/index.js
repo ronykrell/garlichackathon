@@ -1,8 +1,8 @@
-function runAnimation(index, selectedActual, selectedPred){
+function runAnimation(index, selectedActual, selectedPred, correctCount, incorrectCount){
   $.get("http://localhost:5000/predict/?index=" + index).then(
         function(response) {
-            $(selectedActual).css("border", "none")
-            $(selectedPred).css("border", "none")
+            $(selectedActual).css("border", "10px solid transparent")
+            $(selectedPred).css("border", "10px solid transparent")
             if(response.success === "False"){
                 return
             } else {
@@ -51,20 +51,27 @@ function runAnimation(index, selectedActual, selectedPred){
                     selectedPred = "#lateral_pred"
                     break;
             }
+
             if (response.pred === response.actual) {
                 $(selectedActual).css({"border": "10px solid green"})
                 $(selectedPred).css({"border": "10px solid green"})
+                correctCount++
+                $('#correct-count').text(correctCount);
+
             }
             else {
                 $(selectedActual).css({"border": "10px solid red"})
                 $(selectedPred).css({"border": "10px solid red"})
+                incorrectCount++
+               $('#incorrect-count').text(incorrectCount);
+
             }
             console.log(response.pred);
             console.log(response.actual);
             console.log(selectedActual);
             console.log(selectedPred);
 
-            setTimeout(runAnimation, 500, index, selectedActual, selectedPred);
+            setTimeout(runAnimation, 250, index, selectedActual, selectedPred, correctCount, incorrectCount);
         }
     )
 }
@@ -74,6 +81,6 @@ $(document).ready(function() {
     $("#predict").click(function(){
         console.log("hi");
 
-        runAnimation(0, null,  null);
+        runAnimation(0, null,  null, 0 , 0);
     })
 })
