@@ -1,8 +1,8 @@
 function runAnimation(index, selectedActual, selectedPred){
   $.get("http://localhost:5000/predict/?index=" + index).then(
         function(response) {
-            $(selectedActual).css("filter", "brightness(100%)")
-            $(selectedPred).css("filter", "brightness(100%)")
+            $(selectedActual).css("border", "none")
+            $(selectedPred).css("border", "none")
             if(response.success === "False"){
                 return
             } else {
@@ -51,14 +51,20 @@ function runAnimation(index, selectedActual, selectedPred){
                     selectedPred = "#lateral_pred"
                     break;
             }
-            $(selectedActual).css("filter", "brightness(50%)")
-            $(selectedPred).css("filter", "brightness(50%)")
+            if (response.pred === response.actual) {
+                $(selectedActual).css({"border": "10px solid green"})
+                $(selectedPred).css({"border": "10px solid green"})
+            }
+            else {
+                $(selectedActual).css({"border": "10px solid red"})
+                $(selectedPred).css({"border": "10px solid red"})
+            }
             console.log(response.pred);
             console.log(response.actual);
             console.log(selectedActual);
             console.log(selectedPred);
 
-            setTimeout(runAnimation(index, selectedActual, selectedPred), 500);
+            setTimeout(runAnimation, 500, index, selectedActual, selectedPred);
         }
     )
 }
