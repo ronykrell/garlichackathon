@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/garlic.iml" filepath="$PROJECT_DIR$/.idea/garlic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/garlic_send_csv.iml" filepath="$PROJECT_DIR$/.idea/garlic_send_csv.iml" />
     </modules>
   </component>
 </project>
